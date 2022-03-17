@@ -3,14 +3,14 @@
 
 
 
-DROP TABLE IF EXISTS animals
+DROP TABLE IF EXISTS animals;
 
-CREATE TABLE profiles (
+CREATE TABLE animals (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name TEXT NOT NULL,
   type TEXT NOT NULL,
   mood TEXT NOT NULL,
   sound TEXT NOT NULL
-);`
+);
 
 
