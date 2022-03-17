@@ -43,6 +43,18 @@ describe('hand-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('update an animal by its ID', async () => {
+    const expected = {
+      id: '1',
+      name: 'pie',
+      type: 'zebra',
+      mood: 'caring',
+      sound: 'oink'
+    };
+    const res = await request(app).patch(`/api/v1/animals/${expected.id}`).send({ name: 'tie' });
+    expect(res.body).toEqual({ ...res.body  });
+  });
+
   it('delete an animal by its ID', async () => {
     const expected = {
       id: '1',
