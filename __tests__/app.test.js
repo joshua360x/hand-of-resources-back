@@ -25,5 +25,10 @@ describe('hand-resources routes', () => {
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
 
+  it('gets all animals', async () => {
+    const res = await request(app).get('/api/v1/animals');
+    expect(res.body).toEqual([{}]);
+  });
+
 
 });
