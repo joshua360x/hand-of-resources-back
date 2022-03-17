@@ -43,5 +43,17 @@ describe('hand-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('delete an animal by its ID', async () => {
+    const expected = {
+      id: '1',
+      name: 'tie',
+      type: 'zebra',
+      mood: 'caring',
+      sound: 'oink'
+    };
+    const res = await request(app).delete(`/api/v1/animals/${expected.id}`);
+    expect(res.body).toEqual(expected);
+  });
+
 
 });
