@@ -27,7 +27,8 @@ describe('hand-resources routes', () => {
 
   it('gets all animals', async () => {
     const res = await request(app).get('/api/v1/animals');
-    expect(res.body).toEqual([{}]);
+    expect(res.body).toEqual(expect.arrayContaining([])
+    );
   });
 
 
