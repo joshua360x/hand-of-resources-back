@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('hand-resources routes', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     return setup(pool);
   });
 
@@ -29,6 +29,18 @@ describe('hand-resources routes', () => {
     const res = await request(app).get('/api/v1/animals');
     expect(res.body).toEqual(expect.arrayContaining([])
     );
+  });
+
+  it('gets an animal by its ID', async () => {
+    const expected = {
+      id: '1',
+      name: 'tie',
+      type: 'zebra',
+      mood: 'caring',
+      sound: 'oink'
+    };
+    const res = await request(app).get(`/api/v1/animals/${expected.id}`);
+    expect(res.body).toEqual(expected);
   });
 
 
