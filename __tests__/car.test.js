@@ -38,6 +38,11 @@ describe('hand-resources routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('update an car by its ID', async () => {
+    const res = await request(app).patch('/api/v1/cars/1').send({ make: 'ford' });
+    expect(res.body).toEqual({ ...res.body  });
+  });
+
   it('deletes a specific car', async () => {
     const expected = {
       id: '1',
