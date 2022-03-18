@@ -37,4 +37,16 @@ describe('hand-resources routes', () => {
     };
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes a specific car', async () => {
+    const expected = {
+      id: '1',
+      make: 'ford',
+      model: 'fusion',
+      year: 2000,
+    };
+    const res = await request(app).delete('/api/v1/cars/1');
+    expect(res.body).toEqual(expected);
+  });
+
 });
