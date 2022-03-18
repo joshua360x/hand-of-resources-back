@@ -28,6 +28,13 @@ describe('hand-resources routes', () => {
   });
 
 
+  it('gets all cars', async () => {
+
+    const res = await request(app).get('/api/v1/cars');
+    expect(res.body).toEqual((expect.arrayContaining([])));
+  });
+
+
 
 
 
