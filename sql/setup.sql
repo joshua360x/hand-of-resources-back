@@ -36,7 +36,7 @@ CREATE TABLE tvs (
 CREATE TABLE laptops (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   made_in TEXT NOT NULL,
-  sotware TEXT NOT NULL,
+  software TEXT NOT NULL,
   year_released INT NOT NULL CHECK (year_released > 2000)
 );
 
