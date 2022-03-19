@@ -33,6 +33,40 @@ describe('hand-resources routes', () => {
   });
 
 
+  it('get a specific bike', async () => {
+    const expected = {
+      id: '1',
+      condition: 'mint',
+      color: 'blue',
+      miles: 400,
+    };
+    const res = await request(app).get('/api/v1/bikes/1');
+    expect(res.body).toEqual(expected);
+  });
+
+
+  it('updates a specific bike', async () => {
+    const expected = {
+      id: '1',
+      condition: 'mint',
+      color: 'blue',
+      miles: 400,
+    };
+    const res = await request(app).patch('/api/v1/bikes/1').send({ condition: 'mint' });
+    expect(res.body).toEqual(expected);
+
+  });
+
+  it('deletes a specific bike', async () => {
+    const expected = {
+      id: '1',
+      condition: 'mint',
+      color: 'blue',
+      miles: 400,
+    };
+    const res = await request(app).delete('/api/v1/bikes/1');
+    expect(res.body).toEqual(expected);
+  });
 
 
 });
